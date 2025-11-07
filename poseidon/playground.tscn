@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpqr7i0kfsylf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_edjgo"]
+sky_top_color = Color(0.09985284, 0.67189306, 0.96259046, 1)
+sky_horizon_color = Color(0.5377211, 0.6722183, 0.7335016, 1)
+
+[sub_resource type="Sky" id="Sky_rupst"]
+sky_material = SubResource("ProceduralSkyMaterial_edjgo")
+
+[sub_resource type="Environment" id="Environment_wt17y"]
+background_mode = 2
+sky = SubResource("Sky_rupst")
+
+[node name="Playground" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wt17y")
