@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://dkdcp8qbnhbud"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q77nh"]
+height = 0.65
+radius = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cp5wr"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.65
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
+albedo_color = Color(0.7005516, 0.39773297, 0.03379395, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xrckq"]
+material = SubResource("StandardMaterial3D_4flbx")
+size = Vector3(2, 0.2, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_su5bo"]
+size = Vector3(2, 0.2, 0.75)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nn48b"]
+height = 1.0
+radius = 0.02
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ex7cc"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ihrda"]
+size = Vector3(0.01, 0.3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nf1r3"]
+size = Vector3(0.01, 0.3, 0.2)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fglpq"]
+height = 1.0
+radius = 0.02
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nuw05"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gux65"]
+size = Vector3(0.01, 0.3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sd3sm"]
+size = Vector3(0.01, 0.3, 0.2)
+
+[node name="Player" type="Node3D"]
+
+[node name="body" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43304056, 0)
+shape = SubResource("CylinderShape3D_q77nh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43750545, 0)
+mesh = SubResource("CylinderMesh_cp5wr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="body"]
+mesh = SubResource("BoxMesh_xrckq")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="body"]
+shape = SubResource("BoxShape3D_su5bo")
+
+[node name="right oar" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0.35244945)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="right oar"]
+transform = Transform3D(1, 0, 0, 0, 0.9009256, 0.43397358, 0, -0.43397358, 0.9009256, 0, 0.27480385, 0.48986745)
+shape = SubResource("CylinderShape3D_nn48b")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="right oar"]
+transform = Transform3D(1, 0, 0, 0, 0.9009256, 0.43397358, 0, -0.43397358, 0.9009256, 0, 0.27516943, 0.4906264)
+mesh = SubResource("CylinderMesh_ex7cc")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="right oar"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, -0.27208197, 0.7633574)
+shape = SubResource("BoxShape3D_ihrda")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="right oar"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, -0.27103847, 0.7604175)
+mesh = SubResource("BoxMesh_nf1r3")
+
+[node name="left oar" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.011014581, -0.3458463)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="left oar"]
+transform = Transform3D(-1.0000001, 3.7252903e-08, -7.4505806e-08, 7.713411e-09, 0.9009257, 0.4339736, 8.940697e-08, 0.43397364, -0.9009257, 1.0622898e-09, 0.27480385, -0.50227976)
+shape = SubResource("CylinderShape3D_fglpq")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="left oar"]
+transform = Transform3D(-1.0000001, 3.7252903e-08, -7.4505806e-08, 7.713411e-09, 0.9009257, 0.4339736, 8.940697e-08, 0.43397364, -0.9009257, -1.0622898e-09, 0.27516943, -0.5030387)
+mesh = SubResource("CylinderMesh_nuw05")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="left oar"]
+transform = Transform3D(-1, 4.371139e-08, -7.5710346e-08, 0, 0.8660254, 0.5, 8.742278e-08, 0.5, -0.8660254, -1.2850884e-10, -0.27208197, -0.769225)
+shape = SubResource("BoxShape3D_gux65")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="left oar"]
+transform = Transform3D(-1, 4.371139e-08, -7.5710346e-08, 0, 0.8660254, 0.5, 8.742278e-08, 0.5, -0.8660254, 1.2850362e-10, -0.27103847, -0.7662851)
+mesh = SubResource("BoxMesh_sd3sm")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75112295, -0.21632095)
+node_a = NodePath("../body")
+node_b = NodePath("../left oar")
+
+[node name="PinJoint3D2" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75130314, 0.20602316)
+node_a = NodePath("../body")
+node_b = NodePath("../right oar")

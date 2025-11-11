@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpqr7i0kfsylf"]
 
-[ext_resource type="PackedScene" uid="uid://bxoem71rj6b7u" path="res://player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://dkdcp8qbnhbud" path="res://physics_player.tscn" id="1_rupst"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_edjgo"]
 sky_top_color = Color(0.09985284, 0.67189306, 0.96259046, 1)
@@ -64,8 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5876555, 0)
 mesh = SubResource("BoxMesh_m8u5f")
 
 [node name="Player" parent="." instance=ExtResource("1_rupst")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.85427, 3.2964873, -23.487667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1861725, 2.8741906, -23.172136)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(0.003275895, -0.43987647, 0.89805233, 0.001604561, 0.8980583, 0.43987355, -0.9999934, 2.3283217e-10, 0.0036477533, 1.6126862, 1.2934548, 0)
-fov = 90.0
+transform = Transform3D(0.046932098, 0, 0.9988981, 0, 1, 0, -0.9988981, 0, 0.046932098, 2.057022, 0.6175685, 0.022758484)
