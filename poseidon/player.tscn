@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxoem71rj6b7u"]
+[gd_scene load_steps=10 format=3 uid="uid://bxoem71rj6b7u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sh265"]
 size = Vector3(2, 0.2, 0.75)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
+albedo_color = Color(0.7005516, 0.39773297, 0.03379395, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_4flbx"]
+material = SubResource("StandardMaterial3D_4flbx")
 size = Vector3(2, 0.2, 0.75)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_onrkg"]
@@ -15,22 +19,67 @@ top_radius = 0.2
 bottom_radius = 0.2
 height = 0.65
 
-[node name="Player" type="Node3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sh265"]
+height = 1.0
+radius = 0.02
 
-[node name="Boat" type="RigidBody3D" parent="."]
+[sub_resource type="CylinderMesh" id="CylinderMesh_4flbx"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boat"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_onrkg"]
+size = Vector3(0.01, 0.3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i3pqv"]
+size = Vector3(0.01, 0.3, 0.2)
+
+[node name="Player" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_sh265")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Boat"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_4flbx")
 
-[node name="PlayerBody" type="CharacterBody3D" parent="Boat"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boat/PlayerBody"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43304056, 0)
 shape = SubResource("CylinderShape3D_onrkg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Boat/PlayerBody"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43750545, 0)
 mesh = SubResource("CylinderMesh_i3pqv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9009256, 0.43397358, 0, -0.43397358, 0.9009256, 0, 0.27480385, 0.48986745)
+shape = SubResource("CylinderShape3D_sh265")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9009256, 0.43397358, 0, -0.43397358, 0.9009256, 0, 0.27516943, 0.4906264)
+mesh = SubResource("CylinderMesh_4flbx")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, -0.27208197, 0.7633574)
+shape = SubResource("BoxShape3D_onrkg")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, -0.27103847, 0.7604175)
+mesh = SubResource("BoxMesh_i3pqv")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.0000001, 3.7252903e-08, -7.4505806e-08, 7.713411e-09, 0.9009257, 0.4339736, 8.940697e-08, 0.43397364, -0.9009257, 1.0622898e-09, 0.27480385, -0.50227976)
+shape = SubResource("CylinderShape3D_sh265")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.0000001, 3.7252903e-08, -7.4505806e-08, 7.713411e-09, 0.9009257, 0.4339736, 8.940697e-08, 0.43397364, -0.9009257, -1.0622898e-09, 0.27516943, -0.5030387)
+mesh = SubResource("CylinderMesh_4flbx")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 4.371139e-08, -7.5710346e-08, 0, 0.8660254, 0.5, 8.742278e-08, 0.5, -0.8660254, -1.2850884e-10, -0.27208197, -0.769225)
+shape = SubResource("BoxShape3D_onrkg")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.371139e-08, -7.5710346e-08, 0, 0.8660254, 0.5, 8.742278e-08, 0.5, -0.8660254, 1.2850362e-10, -0.27103847, -0.7662851)
+mesh = SubResource("BoxMesh_i3pqv")

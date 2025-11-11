@@ -57,14 +57,14 @@ height = 6.0
 sides = 32
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.9309093, 0, -0.36525053, 0.08776821, -0.97069967, 0.2236937, -0.35454857, -0.24029592, -0.9036333, 0, 0, 0)
+transform = Transform3D(0.9309093, 7.232276e-09, -0.36525053, 0.26643506, -0.6840252, 0.6790595, -0.24984053, -0.7294584, -0.63676536, 0, 0, 0)
 
 [node name="water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5876555, 0)
 mesh = SubResource("BoxMesh_m8u5f")
 
 [node name="Player" parent="." instance=ExtResource("1_rupst")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.85427, 1.8238615, -11.685959)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.85427, 3.2964873, -23.487667)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(0.003275895, -0.43987647, 0.89805233, 0.001604561, 0.8980583, 0.43987355, -0.9999934, 2.3283217e-10, 0.0036477533, 1.6126862, 1.2934548, 0)
